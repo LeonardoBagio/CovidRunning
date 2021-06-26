@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+	public AudioSource somJump;
     public float speed;
     public float jumpForce;
     public bool isJumping;
@@ -19,6 +20,7 @@ public class player : MonoBehaviour
     void Update(){
         //move();
         jump();
+		
     }
 
     void move(){
@@ -45,8 +47,9 @@ public class player : MonoBehaviour
             if (!isJumping){
                 rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 anim.SetBool("jump", true);
+				
             }
-        }
+        }somJump.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision){

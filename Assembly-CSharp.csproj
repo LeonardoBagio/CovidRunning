@@ -36,8 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\script\player.cs" />
      <Compile Include="Assets\sound\CenarioInfinito.cs" />
+     <Compile Include="Assets\script\player.cs" />
+     <Compile Include="Assets\script\NewBehaviourScript.cs" />
      <Compile Include="Assets\script\cenarioInfinito.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
