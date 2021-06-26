@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class gameController : MonoBehaviour
 {
     public int totalScore;
+    public int vidaPersonagem = 3;
     public Text scoreText;
     public static gameController instance;
 
