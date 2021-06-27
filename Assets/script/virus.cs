@@ -6,10 +6,7 @@ public class virus : MonoBehaviour
 {
     private float velocidade = 3;
     private SpriteRenderer sr;
-    private CircleCollider2D circle;
-    public GameObject objetoSpawn;
-    public float timeBetweenSpan;
-    private float spawnTime;    
+    private CircleCollider2D circle;  
 
     void Start(){
         sr      = GetComponent<SpriteRenderer>();
@@ -18,11 +15,6 @@ public class virus : MonoBehaviour
 
     void Update(){
         move();
-
-        if (Time.time > spawnTime){
-            criarObjeto();
-            spawnTime = Time.time + timeBetweenSpan;
-        }
     }
 
     void move(){
@@ -35,7 +27,7 @@ public class virus : MonoBehaviour
             sr.enabled      = false;
             circle.enabled  = false;
             
-            gameController.instance.vidaPersonagem -= 1;
+            gameController.instance.retirarVida(1);
             //gameController.instance.UpdateScoreText();
             Destroy(gameObject, 0f);
         }
@@ -43,11 +35,5 @@ public class virus : MonoBehaviour
         if (collider.gameObject.tag == "finalMap"){
             Destroy(gameObject, 0f);
         }
-    }
-
-    void criarObjeto(){
-        Vector3 posicao = new Vector3(7f, -3.9f, 0f);
-
-        Instantiate(objetoSpawn, posicao, Quaternion.identity);
     }
 }

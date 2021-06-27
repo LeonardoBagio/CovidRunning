@@ -10,7 +10,6 @@ public class gameController : MonoBehaviour
     public Text scoreText;
     public static gameController instance;
 
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;
@@ -18,5 +17,25 @@ public class gameController : MonoBehaviour
 
     public void UpdateScoreText(){
         scoreText.text = totalScore.ToString();
+    }
+
+    public void adicionarVida(int vida){
+        if (vidaPersonagem < 3){
+            vidaPersonagem += vida;
+        }
+    }
+
+    public void retirarVida(int vida){
+        if (vidaPersonagem >= 1){
+            vidaPersonagem -= vida;
+        }
+
+        if (vidaPersonagem == 0){
+            gameOver();
+        }
+    }
+
+    public void gameOver(){
+
     }
 }
