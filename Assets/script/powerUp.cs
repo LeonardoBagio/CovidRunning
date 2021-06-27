@@ -7,6 +7,7 @@ public class powerUp : MonoBehaviour
     private float velocidade = 3;
     private SpriteRenderer sr;
     private CircleCollider2D circle;
+    
 
     void Start(){
         sr      = GetComponent<SpriteRenderer>();

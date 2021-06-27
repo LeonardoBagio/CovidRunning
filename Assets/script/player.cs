@@ -18,6 +18,7 @@ public class player : MonoBehaviour
 
     void Update(){
         jump();
+        down();
     }
 
     void jump(){
@@ -30,9 +31,18 @@ public class player : MonoBehaviour
         }
     }
 
+    void down(){
+        if (Input.GetKey("down")){
+            if (isJumping){
+                rig.gravityScale = 10;
+            }
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.layer == 8){
             isJumping = false;
+            rig.gravityScale = 3;
             anim.SetBool("jump", false);
         }
     }
