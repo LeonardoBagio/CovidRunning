@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
 	public string cena;
+
     // Start is called before the first frame update
     void Start()
     {
