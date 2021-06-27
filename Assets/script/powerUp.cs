@@ -7,7 +7,7 @@ public class powerUp : MonoBehaviour
     private float velocidade = 3;
     private SpriteRenderer sr;
     private CircleCollider2D circle;
-    
+    public bool tipoPowerUp = false;
 
     void Start(){
         sr      = GetComponent<SpriteRenderer>();
@@ -28,18 +28,17 @@ public class powerUp : MonoBehaviour
             sr.enabled      = false;
             circle.enabled  = false;
             
-            gameController.instance.adicionarVida(1);
-            //gameController.instance.UpdateScoreText();
+            if (tipoPowerUp == false){
+                gameController.instance.adicionarVida(1);
+            } else {
+                gameController.instance.adicionarVida(2);
+            }
+            
             Destroy(gameObject, 0f);
         }
 
         if (collider.gameObject.tag == "finalMap"){
             Destroy(gameObject, 0f);
         }        
-    }
-
-    void particulaColetavel(){
-        //particulaColetada.SetActive(true);
-        //Destroy(particulaColetada, 0.3f);
     }
 }

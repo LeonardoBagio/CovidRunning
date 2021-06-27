@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae674fa25cbfe24f851750ad00084d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stormTrooper: {fileID: 1384437520992179855, guid: bc6bd7da95fc98947995623c0f87e815, type: 3}
+  stormTrooper: {fileID: 4766153460717216016, guid: bc6bd7da95fc98947995623c0f87e815, type: 3}
   powerUp: {fileID: 7868137792416178269, guid: 4a420adb75e994f498695b2d97c98765, type: 3}
   tempoSpawnPowerUp: 3
   virus: {fileID: 1982116113155879731, guid: 760794fc686e4bf47b078533cbc1bcc7, type: 3}
