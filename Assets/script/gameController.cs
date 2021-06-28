@@ -11,10 +11,12 @@ public class gameController : MonoBehaviour
     public int totalScore;
     private float controleTimeScore;
     public Text scoreText;
+    public Text vida;
 
     void Start()
     {
         instance = this;
+        atualizarVida();
     }
 
     void Update(){
@@ -25,11 +27,11 @@ public class gameController : MonoBehaviour
         if (Time.time > controleTimeScore){
             controleTimeScore = Time.time + 0.4f;
             totalScore       += 1;
-            UpdateScoreText();
+            atualizarScore();
         }
     }
 
-    private void UpdateScoreText(){
+    private void atualizarScore(){
         scoreText.text = "Total Score: "+totalScore.ToString()+"m";
     }
 
@@ -37,6 +39,8 @@ public class gameController : MonoBehaviour
         if (vidaPersonagem < 3){
             vidaPersonagem += vida;
         }
+
+        atualizarVida();
     }
     public void retirarVida(int vida){
         if (vidaPersonagem >= 1){
@@ -46,6 +50,12 @@ public class gameController : MonoBehaviour
         if (vidaPersonagem == 0){
             gameOver();
         }
+
+        atualizarVida();
+    }
+
+    private void atualizarVida(){
+        vida.text = "Vida: "+vidaPersonagem.ToString();
     }
 
     private void criarCoracao(){
