@@ -15,7 +15,6 @@ public class gameController : MonoBehaviour
     void Start()
     {
         instance = this;
-        criarCoracao();
     }
 
     void Update(){
@@ -26,11 +25,12 @@ public class gameController : MonoBehaviour
         if (Time.time > controleTimeScore){
             controleTimeScore = Time.time + 0.4f;
             totalScore       += 1;
+            UpdateScoreText();
         }
     }
 
     private void UpdateScoreText(){
-        scoreText.text = totalScore.ToString();
+        scoreText.text = "Total Score: "+totalScore.ToString()+"m";
     }
 
     public void adicionarVida(int vida){
