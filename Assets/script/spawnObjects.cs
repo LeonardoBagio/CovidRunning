@@ -13,15 +13,23 @@ public class spawnObjects : MonoBehaviour
     public float tempoSpawnVirus = 1;
     private float spawnTimeVirus;
 
-    void Update(){
-        if (Time.time > spawnTimePowerUp){
-            criarPowerUp();
-            spawnTimePowerUp = Time.time + tempoSpawnPowerUp;
-        }
+    private GameObject player;
 
-        if (Time.time > spawnTimeVirus){
-            criarVirus();
-            spawnTimeVirus = Time.time + tempoSpawnVirus;
+    void Start(){
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    void Update(){
+        if(GameObject.FindGameObjectWithTag("Player") != null){
+            if (Time.time > spawnTimePowerUp){
+                criarPowerUp();
+                spawnTimePowerUp = Time.time + tempoSpawnPowerUp;
+            }
+
+            if (Time.time > spawnTimeVirus){
+                criarVirus();
+                spawnTimeVirus = Time.time + tempoSpawnVirus;
+            }
         }
     }
     void criarPowerUp(){

@@ -12,15 +12,20 @@ public class gameController : MonoBehaviour
     private float controleTimeScore;
     public Text scoreText;
     public Text vida;
-
+    public AudioSource musicaFeliz;
+    private GameObject player;
     void Start()
     {
-        instance = this;
+        instance    = this;
+        player      = GameObject.FindGameObjectWithTag("Player");
+        musicaFeliz = GetComponent<AudioSource>();
         atualizarVida();
     }
 
     void Update(){
-        controlarScore();
+        if(GameObject.FindGameObjectWithTag("Player") != null){
+            controlarScore();
+        }
     }
 
     private void controlarScore(){
@@ -76,6 +81,6 @@ public class gameController : MonoBehaviour
     }
     
     private void gameOver(){
-        
+        Destroy(player.gameObject);
     }
 }
