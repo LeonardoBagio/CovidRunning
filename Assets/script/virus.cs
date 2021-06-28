@@ -28,7 +28,6 @@ public class virus : MonoBehaviour
             circle.enabled  = false;
             
             gameController.instance.retirarVida(1);
-            //gameController.instance.UpdateScoreText();
             Destroy(gameObject, 0f);
         }
 

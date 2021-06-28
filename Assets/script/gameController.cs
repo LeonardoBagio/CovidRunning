@@ -45,6 +45,10 @@ public class gameController : MonoBehaviour
             vidaPersonagem += vida;
         }
 
+        if (vidaPersonagem > 3){
+            vidaPersonagem = 3;
+        }
+
         atualizarVida();
     }
     public void retirarVida(int vida){
