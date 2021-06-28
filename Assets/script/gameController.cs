@@ -51,6 +51,7 @@ public class gameController : MonoBehaviour
 
         atualizarVida();
     }
+
     public void retirarVida(int vida){
         if (vidaPersonagem >= 1){
             vidaPersonagem -= vida;
@@ -65,23 +66,6 @@ public class gameController : MonoBehaviour
 
     private void atualizarVida(){
         vida.text = "Vida: "+vidaPersonagem.ToString();
-    }
-
-    private void criarCoracao(){
-        if (vidaPersonagem > 1){
-            Vector3 posicao = new Vector3(-7f, 4.2f, 0f);
-            Instantiate(coracao, posicao, Quaternion.identity);
-        }
-
-        if (vidaPersonagem > 2){
-            Vector3 posicao = new Vector3(-5.5f, 4.2f, 0f);
-            Instantiate(coracao, posicao, Quaternion.identity);
-        }
-
-        if (vidaPersonagem == 3){
-            Vector3 posicao = new Vector3(-4f, 4.2f, 0f);
-            Instantiate(coracao, posicao, Quaternion.identity);
-        }
     }
     
     private void gameOver(){
